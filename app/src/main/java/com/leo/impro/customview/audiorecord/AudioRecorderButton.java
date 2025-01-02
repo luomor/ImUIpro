@@ -67,10 +67,9 @@ public class AudioRecorderButton extends AppCompatButton implements AudioManage.
         super(context, attrs);
         //实例化对话框管理器
         audioDialogManage = new AudioDialogManage(getContext());
-
         //音频文件保存路径
-        String dir = Environment.getExternalStorageDirectory()
-                + "/deepreality/VoiceCache";
+        //String dir = Environment.getExternalStorageDirectory() + "/deepreality/VoiceCache";
+        String dir = context.getExternalFilesDir(Environment.DIRECTORY_DCIM).getAbsolutePath() + "/deepreality/VoiceCache";
         //获取音频管理器
         mAudioManage = AudioManage.getInstance(dir);
         //监听准备完成接口
