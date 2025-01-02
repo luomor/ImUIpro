@@ -2,6 +2,7 @@ package com.leo.impro.customview.audiorecord;
 
 import android.media.MediaRecorder;
 import android.os.Handler;
+import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +14,8 @@ import java.util.Date;
  */
 
 public class AudioManage {
+    private static final String TAG = AudioManage.class.getSimpleName();
+
     private MediaRecorder mMediaRecorder;  //MediaRecorder可以实现录音和录像。需要严格遵守API说明中的函数调用先后顺序.
     private String mDir;             // 文件夹的名称
     private String mCurrentFilePath;
@@ -87,7 +90,13 @@ public class AudioManage {
             mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.AAC_ADTS);    // 设置音频的格式
             mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);    // 设置音频的编码为AMR_NB
 
-            mMediaRecorder.prepare();
+            try {
+                //开始录制
+                mMediaRecorder.prepare();
+            } catch (Exception e) {
+                Log.e(TAG, "录制prepare()异常 " + e.getMessage());
+                e.printStackTrace();
+            }
 
             mMediaRecorder.start();
             startTime = System.currentTimeMillis();
