@@ -87,8 +87,8 @@ public class AudioManage {
             mCurrentFilePath = file.getAbsolutePath();
             mMediaRecorder.setOutputFile(file.getAbsolutePath());    // 设置输出文件
             mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);    // 设置MediaRecorder的音频源为麦克风
-            mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.AAC_ADTS);    // 设置音频的格式
-            mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);    // 设置音频的编码为AMR_NB
+            mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG);    // 设置音频的格式
+            mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS);    // 设置音频的编码为AMR_NB
 
             try {
                 //开始录制
