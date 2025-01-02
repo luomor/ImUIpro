@@ -109,8 +109,6 @@ public class AudioManage {
             }
         } catch (IllegalStateException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
     }
