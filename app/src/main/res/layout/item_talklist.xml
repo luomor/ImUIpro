@@ -71,7 +71,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/sp_15"
                             android:textColor="@color/black1b"
-                            android:text="麦克林"
+                            android:text="娜娜"
                             android:textStyle="bold"
                             />
 
@@ -82,7 +82,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/sp_13"
                             android:textColor="#585858"
-                            android:text="主治医师"
+                            android:text="薛丽娜"
                             />
 
                         <TextView
